@@ -1,5 +1,6 @@
 package de.bnd.coding.sample.demo.view;
 
+import de.bnd.coding.sample.demo.data.UserEntity;
 import de.bnd.coding.sample.demo.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -77,8 +78,7 @@ public class UserController {
         logger.info(
                 "Received request to update", userDto
         );
-        userService.updateUserZipCode(userDto);
-
+        userService.updateUserData(userDto);
     }
 
 
