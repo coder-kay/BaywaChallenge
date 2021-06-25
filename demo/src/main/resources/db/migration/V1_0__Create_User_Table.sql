@@ -5,13 +5,29 @@ CREATE TABLE IF NOT EXISTS users (
     lastname VARCHAR(255) NOT NULL,
     userpassword VARCHAR(255) NOT NULL,
     zipcode VARCHAR(255) DEFAULT NULL,
+    peopleinhouse INT DEFAULT NULL,
+    heating BOOL DEFAULT NULL,
+    electricity BOOL DEFAULT NULL,
+    car VARCHAR(255) DEFAULT NULL,
+    kilometers INT DEFAULT NULL,
+    holidaycar INT DEFAULT NULL,
+    holidayplane INT DEFAULT NULL,
+    holidaytrain INT DEFAULT NULL,
+    food VARCHAR(255) DEFAULT NULL,
+    pvsystem BOOL DEFAULT NULL,
+    recyclingglass BOOL DEFAULT NULL,
+    recyclingplastic BOOL DEFAULT NULL,
+    recyclingpaper BOOL DEFAULT NULL,
+    recyclingmetal BOOL DEFAULT NULL,
+    recyclingfoodwaste BOOL DEFAULT NULL,
+    washing VARCHAR(255) DEFAULT NULL,
     UNIQUE (username)
 ) ENGINE=INNODB;
 
 CREATE TABLE IF NOT EXISTS carbonfootprints (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    footprint VARCHAR(255) NOT NULL
+    footprint INT NOT NULL
 ) ENGINE=INNODB;
 
 CREATE TABLE IF NOT EXISTS challenges (

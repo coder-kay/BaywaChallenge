@@ -62,9 +62,11 @@ public class UserService {
         );
     }
 
-    public void updateUserZipCode(UserDto userDto) {
+    public void updateUserData(UserDto userDto) {
         UserEntity oldUserEntity = userRepository.findByUserName(userDto.userName());
-        oldUserEntity.setZipCode(userDto.zipCode());
-        userRepository.save(oldUserEntity);
+        if (!userDto.zipCode().equals(oldUserEntity.getZipCode())) {
+            oldUserEntity.setZipCode(userDto.zipCode());
+            userRepository.save(oldUserEntity);
+        }
     }
 }
